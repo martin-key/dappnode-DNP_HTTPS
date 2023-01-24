@@ -108,7 +108,6 @@ http {
         <% ENV['ACCESS_RESTRICTION'].split(' ').each do |ip| %>
             allow <%= ip %>;
         <% end %>
-        deny all;
     <% end %>
 
 
@@ -123,7 +122,6 @@ http {
         allow 192.168.0.0/16;
         allow fc00::/7;
         allow fe80::/10;
-        deny all;
         location      / {
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
